@@ -1,6 +1,10 @@
 {
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon ./src/index.js",
+    "format": "npx --yes prettier --write ./src",
+    "precreate:html": "rm -rf ./src/.www",
+    "create:html": "cd ./src && npx --yes create-html5-boilerplate .www",
+    "postcreate:html": "cd ./src/.www && npm i && npm run build"
   },
   "dependencies": {
     "express": "^4.18.1"
